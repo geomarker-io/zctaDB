@@ -24,7 +24,7 @@ the input data.frame with the following columns appended
 \code{secondary_road_density} length(m) of secondary roads in ZCTA divided by area of ZCTA (km2)
 }
 \description{
-\code{add_road_data()} adds length (m) and density (m/km2) of primary and
+adds length (m) and density (m/km2) of primary and
 secondary roads as defined by 2018 TIGER Line files. Data is available for
 2000 and 2010 ZCTAs.
 }

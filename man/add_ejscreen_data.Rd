@@ -11,8 +11,28 @@ add_ejscreen_data(data)
 Optionally, another column called 'year', with possible values 2000 to
 2019. If no year is given, defaults to 2018.}
 }
+\value{
+the input data.frame with the following columns appended
+
+\code{zcta_year} the ZCTA boundary year matched to the input year (2000 or 2010)
+
+\code{ej_year} the EJ Screen data year matched to the input year (2015 - 2018)
+
+\code{traffic_proximity} count of vehicles (AADT, avg. annual daily traffic) at
+major roads within 500 meters, divided by distance in meters
+
+\code{ozone_conc} ozone summer seasonal avg. of daily maximum 8-hour concentration
+in air in parts per billion
+
+\code{pm_conc} PM2.5 levels in air, µg/m3 annual avg
+
+\code{diesel_pm} diesel particulate matter level in air, ug/m3
+
+\code{resp_hazard_ind} air toxics respiratory hazard index (ratio of exposure
+concentration to health-based reference concentration)
+}
 \description{
-\code{add_ejscreen_data()} adds traffic proximity index, ozone concentration,
+adds traffic proximity index, ozone concentration,
 particulate matter (PM) concentration, PM from diesel traffic, and a
 respiratory hazard index from the EPA EJ Screen database. Data is available for
 2000 and 2010 ZCTAs and for years 2015 to 2018.

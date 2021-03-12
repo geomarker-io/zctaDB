@@ -1,6 +1,7 @@
 #' Get Racial Composition Data
 #'
-#' \code{add_race_data()} adds numbers and percentages of white non-Hispanic
+#' @description
+#' adds numbers and percentages of white non-Hispanic
 #' and black non-Hispanic residents from the 2018 ACS for given ZIP codes,
 #' as well as a racial index of concentration at the extremes (ICE). Data is
 #' available for 2010 ZCTAs in the contiguous United States.
@@ -35,7 +36,8 @@ add_race_data <- function(data) {
 
 #' Get Length and Density of Roads
 #'
-#' \code{add_road_data()} adds length (m) and density (m/km2) of primary and
+#' @description
+#' adds length (m) and density (m/km2) of primary and
 #' secondary roads as defined by 2018 TIGER Line files. Data is available for
 #' 2000 and 2010 ZCTAs.
 #'
@@ -64,7 +66,7 @@ add_road_data <- function(data) {
   if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
   # if no column called year, use most recent -- give warning
   if(!"year" %in% colnames(data)) {
-    warning("no column called 'year' -- assuming 2010 ZCTAs.")
+    message("no column called 'year' -- assuming 2010 ZCTAs.")
     data$year <- '2018'
   }
   if(is.numeric(data$year)) {data$year <- as.character(data$year)}
@@ -75,7 +77,8 @@ add_road_data <- function(data) {
 
 #' Get EJ Screen Data
 #'
-#' \code{add_ejscreen_data()} adds traffic proximity index, ozone concentration,
+#' @description
+#' adds traffic proximity index, ozone concentration,
 #' particulate matter (PM) concentration, PM from diesel traffic, and a
 #' respiratory hazard index from the EPA EJ Screen database. Data is available for
 #' 2000 and 2010 ZCTAs and for years 2015 to 2018.
@@ -90,7 +93,7 @@ add_road_data <- function(data) {
 #'
 #'  \code{ej_year} the EJ Screen data year matched to the input year (2015 - 2018)
 #'
-#'  \code{traffic_proximity count of vehicles (AADT, avg. annual daily traffic) at
+#'  \code{traffic_proximity} count of vehicles (AADT, avg. annual daily traffic) at
 #'  major roads within 500 meters, divided by distance in meters
 #'
 #'  \code{ozone_conc} ozone summer seasonal avg. of daily maximum 8-hour concentration
@@ -98,7 +101,7 @@ add_road_data <- function(data) {
 #'
 #'  \code{pm_conc} PM2.5 levels in air, µg/m3 annual avg
 #'
-#'  \code{diesel_pm} diesel particulate matter level in air, µg/m3
+#'  \code{diesel_pm} diesel particulate matter level in air, ug/m3
 #'
 #'  \code{resp_hazard_ind} air toxics respiratory hazard index (ratio of exposure
 #'  concentration to health-based reference concentration)
@@ -115,7 +118,7 @@ add_ejscreen_data <- function(data) {
   if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
   # if no column called year, use most recent -- give warning
   if(!"year" %in% colnames(data)) {
-    warning("no column called 'year' -- using 2018 data.")
+    message("no column called 'year' -- using 2018 data.")
     data$year <- '2018'
   }
   if(is.numeric(data$year)) {data$year <- as.character(data$year)}
@@ -125,7 +128,8 @@ add_ejscreen_data <- function(data) {
 
 #' Get Land Cover Data
 #'
-#' \code{add_landcover_data()} adds percentage of land classified as 'green',
+#' @description
+#' adds percentage of land classified as 'green',
 #' percentage impervious land, and percentage of land covered by tree canopy
 #' from the National Landcover Database. Data is available for
 #' 2000 and 2010 ZCTAs and for years 2001, 2006, 2011, and 2016.
@@ -162,7 +166,7 @@ add_landcover_data <- function(data) {
   if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
   # if no column called year, use most recent -- give warning
   if(!"year" %in% colnames(data)) {
-    warning("no column called 'year' -- using 2016 data.")
+    message("no column called 'year' -- using 2016 data.")
     data$year <- '2016'
   }
   if(is.numeric(data$year)) {data$year <- as.character(data$year)}
@@ -172,7 +176,8 @@ add_landcover_data <- function(data) {
 
 #' Get Community Deprivation Data
 #'
-#' \code{add_depindex_data()} adds community deprivation index and
+#' @description
+#' adds community deprivation index and
 #' related variables from the American Community Survey (ACS). Data is
 #' available for 2000 and 2010 ZCTAs and for years 2015 and 2018.
 #'
@@ -214,7 +219,7 @@ add_depindex_data <- function(data) {
   if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
   # if no column called year, use most recent -- give warning
   if(!"year" %in% colnames(data)) {
-    warning("no column called 'year' -- using 2018 data.")
+    message("no column called 'year' -- using 2018 data.")
     data$year <- '2018'
   }
   if(is.numeric(data$year)) {data$year <- as.character(data$year)}

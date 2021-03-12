@@ -35,7 +35,7 @@ of at least high school graduation (includes GED equivalency)
 \code{dep_index} a composite measure of the other 6 variables
 }
 \description{
-\code{add_depindex_data()} adds community deprivation index and
+adds community deprivation index and
 related variables from the American Community Survey (ACS). Data is
 available for 2000 and 2010 ZCTAs and for years 2015 and 2018.
 }

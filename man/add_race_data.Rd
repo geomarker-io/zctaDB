@@ -25,7 +25,7 @@ the input data.frame with the following columns appended
 \code{pct_bnh} percent black \code{bnh/totalx100}
 }
 \description{
-\code{add_race_data()} adds numbers and percentages of white non-Hispanic
+adds numbers and percentages of white non-Hispanic
 and black non-Hispanic residents from the 2018 ACS for given ZIP codes,
 as well as a racial index of concentration at the extremes (ICE). Data is
 available for 2010 ZCTAs in the contiguous United States.

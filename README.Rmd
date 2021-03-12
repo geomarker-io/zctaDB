@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# zctaDB
+
+<!-- badges: start -->
+[![R build status](https://github.com/geomarker-io/zctaDB/workflows/R-CMD-check/badge.svg)](https://github.com/geomarker-io/zctaDB/actions)
+[![R-CMD-check](https://github.com/geomarker-io/zctaDB/workflows/R-CMD-check/badge.svg)](https://github.com/geomarker-io/zctaDB/actions)
+<!-- badges: end -->
+
+The goal of zctaDB is to add ZIP code-level geomarkers to your data.
+
+Available geomarkers include
+
+| Category    | Variables   |  More information   | 
+| :---------- | :---------- | :---------- | 
+| Population and racial composition |  total population of ZCTA <br /> number and percentage of white non-Hispanic residents <br /> number and percentage of black non-Hispanic residents <br /> racial index of concentration at the extremes (ICE) | [racial ICE published](https://doi.org/10.1111/ajt.16186)
+| Road proximity   | length and density of primary roads <br /> length and density of secondary roads | [DeGAUSS roads container](https://degauss.org/roads/)
+| EJ Screen   | traffic proximity <br /> ozone concentration <br /> PM$_{2.5}$ concentration <br /> diesel PM concentration <br />  respiratory hazard index | [EJ Screen](https://www.epa.gov/ejscreen/overview-environmental-indicators-ejscreen)
+| Land Cover   | percent impervious land <br /> percent green land <br /> percent tree canopy <br />  | [MRLC](mrlc.gov)
+| Community Deprivation   | fraction assisted income <br /> fraction high school education <br /> median household income <br /> fraction no health insurance <br /> fraction poverty <br /> fraction vacant housing <br /> deprivation index | [deprivation index](https://geomarker.io/dep_index/)
+
+For more information on these variables and how they are used in this package, please view the documentation for the corresponding function (e.g., `?zctaDB::add_road_data`).
+
+
+## Installation
+
+You can install zctaDB from from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("geomarker-io/zctaDB")
+```
+
+## Example
+
+Each function in `zctaDB` adds variables to your data based on a column named `zcta` that contains a 5-digit ZIP code. 
+
+```{r}
+library(zctaDB)
+d <- data.frame(id = c('abc', 'def', 'ghi'),
+            zcta = c('45229', '45056', '47012'))
+
+add_road_data(data = d)
+```
+
+

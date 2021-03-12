@@ -29,7 +29,7 @@ codes except water, ice/snow, developed medium intensity, developed high intensi
 \code{pct_treecanopy} average percent tree canopy for pixels within ZCTA
 }
 \description{
-\code{add_landcover_data()} adds percentage of land classified as 'green',
+adds percentage of land classified as 'green',
 percentage impervious land, and percentage of land covered by tree canopy
 from the National Landcover Database. Data is available for
 2000 and 2010 ZCTAs and for years 2001, 2006, 2011, and 2016.
