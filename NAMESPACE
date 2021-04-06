@@ -3,5 +3,6 @@
 export(add_depindex_data)
 export(add_ejscreen_data)
 export(add_landcover_data)
+export(add_narr_cell_zcta)
 export(add_race_data)
 export(add_road_data)

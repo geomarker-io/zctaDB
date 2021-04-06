@@ -98,3 +98,15 @@ test_that("add_depindex_data", {
     add_depindex_data(input_data())
   )
 })
+
+test_that("add_narr_cell_zcta", {
+  expect_equal(
+    data.frame(
+      stringsAsFactors = FALSE,
+      id = c("abc", "def", "ghi"),
+      zcta = c("45229", "45056", "47012"),
+      narr_cell = c(56772,56422,56771)
+    ),
+    add_narr_cell_zcta(input_data())
+  )
+})

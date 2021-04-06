@@ -1,6 +1,6 @@
 Package: zctaDB
 Title: Get Geomarker Data Based on ZIP Code
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Erika",
            family = "Rasnick",
@@ -8,7 +8,7 @@ Authors@R:
            email = "erika.rasnick@cchmc.org")
 Description: Get geomarker data for ZIP Codes in the contiguous United States. Available data includes racial 
             composition; length and density of primary and secondary roads' land cover classifications including greenness, 
-            tree canopy, and imperviousness; measures of community deprivation; and data from the EPA environmental justice
+            tree canopy, and imperviousness; measures of community deprivation; NARR cell identifier; and data from the EPA environmental justice
             index including traffic proximity, ozone concentration, PM2.5 concentration, concentration of PM from diesel
             traffic, and a respiratory hazard index.
 License: GPL-3
