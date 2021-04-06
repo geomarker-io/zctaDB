@@ -21,6 +21,7 @@ Available geomarkers include
 | EJ Screen                         | traffic proximity <br /> ozone concentration <br /> PM<sub>2.5</sub> concentration <br /> diesel PM concentration <br /> respiratory hazard index                                                                 | [EJ Screen](https://www.epa.gov/ejscreen/overview-environmental-indicators-ejscreen) |
 | Land Cover                        | percent impervious land <br /> percent green land <br /> percent tree canopy <br />                                                                                                                               | [MRLC](mrlc.gov)                                                                     |
 | Community Deprivation             | fraction assisted income <br /> fraction high school education <br /> median household income <br /> fraction no health insurance <br /> fraction poverty <br /> fraction vacant housing <br /> deprivation index | [deprivation index](https://geomarker.io/dep_index/)                                 |
+| NARR Cell Identifier              | narr cell (based on ZCTA centroid)                                                                                                                                                                                | [addNarrData](https://geomarker.io/addNarrData/)                                     |
 
 For more information on these variables and how they are used in this
 package, please view the documentation for the corresponding function
@@ -46,8 +47,7 @@ d <- data.frame(id = c('abc', 'def', 'ghi'),
             zcta = c('45229', '45056', '47012'))
 
 add_road_data(data = d)
-#> Warning in add_road_data(data = d): no column called 'year' -- assuming 2010
-#> ZCTAs.
+#> no column called 'year' -- assuming 2010 ZCTAs.
 #>    id  zcta year primary_road_length primary_road_density secondary_road_length
 #> 1 abc 45229 2018            3721.548         5.263361e-04              8508.693
 #> 2 def 45056 2018               0.000         0.000000e+00             97575.410

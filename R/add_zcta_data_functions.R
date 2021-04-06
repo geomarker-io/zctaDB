@@ -227,3 +227,30 @@ add_depindex_data <- function(data) {
   data <- dplyr::left_join(data, dep_index, by = c('zcta', 'year'))
   return(data)
 }
+
+#' Get NARR Cell ID for ZCTA Centroid
+#'
+#' @description
+#' adds NARR cell identifier based on ZCTA centroid for subsequent
+#' use with the {addNarrData} package
+#'
+#' @param data data.frame or tibble with column called 'zcta' at minimum.
+#'
+#' @return the input data.frame with the following columns appended
+#'
+#'  \code{narr_cell} NARR cell indentifier corresponding to the
+#'  NARR cell that intersects the ZCTA centroid
+#'
+#' @references https://geomarker.io/addNarrData/
+#'
+#' @examples
+#' my_data <- data.frame(zcta = c('45229', '45056', '47012'))
+#' add_narr_cell_zcta(data = my_data)
+#' @export
+
+add_narr_cell_zcta <- function(data) {
+  if(!"zcta" %in% colnames(data)) {stop("input dataframe must have a column called 'zcta'")}
+  if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
+  data <- dplyr::left_join(data, narr_cell_data, by = c('zcta'))
+  return(data)
+}
