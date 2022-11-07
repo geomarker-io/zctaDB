@@ -254,3 +254,46 @@ add_narr_cell_zcta <- function(data) {
   data <- dplyr::left_join(data, narr_cell_data, by = c('zcta'))
   return(data)
 }
+
+#' Get Traffic Data
+#'
+#' @description
+#' adds Average Annual Daily Traffic Density. AADT data
+#' is from 2017 and corresponds to 2010 ZCTA vintages.
+#'
+#' @param data data.frame or tibble with column called 'zcta' at minimum.
+#'
+#' @return the input data.frame with the following columns appended
+#'
+#'  \code{moving_roads_density} density of roads with moving traffic
+#'  (meters of road per square meter of area)
+#'
+#'  \code{stop_go_roads_density} density of roads with stop and go
+#'  traffic (meters of road per square meter of area)
+#'
+#'  \code{moving_traffic_density} moving traffic density (vehicle-meters
+#'  per square meter of area)
+#'
+#'  \code{stop_go_traffic_density} stop and go traffic density
+#'  (vehicle-meters per square meter of area)
+#'
+#'  \code{moving_truck_density} moving truck traffic density
+#'  (truck-meters per square meter of area)
+#'
+#'  \code{stop_go_truck_density} stop and go truck traffic
+#'  density (truck-meters per square meter of area)
+#'
+#' @references https://degauss.org/aadt
+#'
+#' @examples
+#' my_data <- data.frame(zcta = c('45229', '45056', '47012'))
+#' add_aadt_data(data = my_data)
+#' @export
+
+add_aadt_data <- function(data) {
+  if(!"zcta" %in% colnames(data)) {stop("input dataframe must have a column called 'zcta'")}
+  if(is.numeric(data$zcta)) {data$zcta <- as.character(data$zcta)}
+
+  data <- dplyr::left_join(data, aadt_data, by = c('zcta'))
+  return(data)
+}
