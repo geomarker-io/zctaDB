@@ -110,3 +110,20 @@ test_that("add_narr_cell_zcta", {
     add_narr_cell_zcta(input_data())
   )
 })
+
+test_that("add_aadt_data", {
+  expect_equal(
+    data.frame(
+      stringsAsFactors = FALSE,
+      id = c("abc", "def", "ghi"),
+      zcta = c("45229", "45056", "47012"),
+      moving_roads_density = c(0.000525, 0, 0.000011),
+      stop_go_roads_density = c(0.001958, 0.000139, 0.000085),
+      moving_traffic_density = c(22.79, 0, 0.25),
+      stop_go_traffic_density = c(33.69, 1.02, 0.35),
+      moving_truck_density = c(1.91, 0, 0.09),
+      stop_go_truck_density = c(0, 0.05, 0.04)
+    ),
+    add_aadt_data(input_data())
+  )
+})

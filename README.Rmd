@@ -32,6 +32,7 @@ Available geomarkers include
 | Land Cover   | percent impervious land <br /> percent green land <br /> percent tree canopy <br />  | [MRLC](mrlc.gov)
 | Community Deprivation   | fraction assisted income <br /> fraction high school education <br /> median household income <br /> fraction no health insurance <br /> fraction poverty <br /> fraction vacant housing <br /> deprivation index | [deprivation index](https://geomarker.io/dep_index/)
 | NARR Cell Identifier  | narr cell | *Note that this is based on centroids of 2010 ZCTAs, but there are alternative ways to join these spatial datasets that may be better, such as all overlapping cells and corresponding area-based weights or using the the cell that most overlaps the ZCTA <br /> [addNarrData](https://geomarker.io/addNarrData/)
+| Average Annual Daily Traffic Density   | density of roads with moving traffic (meters of road per square meter of area) <br /> density of roads with stop and go traffic (meters of road per square meter of area) <br /> moving traffic density (vehicle-meters per square meter of area) <br /> stop and go traffic density (vehicle-meters per square meter of area) <br /> moving truck traffic density (truck-meters per square meter of area) <br /> stop and go truck traffic density (truck-meters per square meter of area) | [aadt](https://degauss.org/aadt/)
 
 For more information on these variables and how they are used in this package, please view the documentation for the corresponding function (e.g., `?zctaDB::add_road_data`).
 
